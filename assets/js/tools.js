@@ -21,7 +21,7 @@
 window.TOOLS = [
   {
     title: "Example Tool (template)",
-    description: "A placeholder showing where a Claude-built HTML tool goes. Replace this entry with your first real tool.",
+    description: "A placeholder showing where an interactive tool goes. Replace this entry with your first real tool.",
     url: "tools/example-tool/",
     topics: ["Template"],
     updated: "2026-11-23",
