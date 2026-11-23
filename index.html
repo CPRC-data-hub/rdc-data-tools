@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Tools | Central Pines Regional Data Center</title>
+  <meta name="description" content="Interactive data tools, dashboards and maps from the Central Pines Regional Council Regional Data Center.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-org">Central Pines Regional Council</span>
+          <span class="brand-site">Regional Data Center</span>
+        </span>
+      </a>
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="./" aria-current="page">Data Tools</a></li>
+          <li><a href="https://cprc-data-hub-tjcoggis.hub.arcgis.com/">GIS Data Hub</a></li>
+          <li><a href="https://www.centralpinesnc.gov">centralpinesnc.gov</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Regional Data Center</p>
+        <h1>Data tools for the Central Pines region</h1>
+        <p class="lede">Explore interactive maps, dashboards and calculators built by CPRC staff to help local governments, partners and residents understand how our region is changing.</p>
+      </div>
+    </section>
+
+    <section class="wrap tools-section" aria-labelledby="tools-heading">
+      <div class="tools-toolbar">
+        <h2 id="tools-heading">Browse tools</h2>
+        <div class="filters">
+          <label class="visually-hidden" for="search">Search tools</label>
+          <input id="search" type="search" placeholder="Search tools…" autocomplete="off">
+          <label class="visually-hidden" for="topic">Filter by topic</label>
+          <select id="topic">
+            <option value="">All topics</option>
+          </select>
+        </div>
+      </div>
+      <p id="result-count" class="result-count" aria-live="polite"></p>
+      <ul id="tool-grid" class="tool-grid"></ul>
+      <noscript><p>Turn on JavaScript to see the list of tools.</p></noscript>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <p class="footer-org">Central Pines Regional Council</p>
+        <p>4307 Emperor Blvd, Suite 110, Durham, NC 27703 · 919-549-0551</p>
+      </div>
+      <p>Questions or data requests? <a href="mailto:data@centralpinesnc.gov">data@centralpinesnc.gov</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/tools.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
