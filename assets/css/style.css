@@ -57,7 +57,12 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 }
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-org { font-size: 0.8rem; opacity: 0.85; }
-.brand-site { font-weight: 700; font-size: 1.1rem; }
+.brand-site { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
+.beta-tag {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--orange-creamsicle); color: var(--carbon-black);
+  padding: 2px 8px; border-radius: 999px; line-height: 1.4;
+}
 .nav-list { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; flex-wrap: wrap; }
 .nav-list a { color: #fff; text-decoration: none; font-weight: 500; padding-bottom: 3px; border-bottom: 2px solid transparent; }
 .nav-list a:hover, .nav-list a[aria-current="page"] { border-bottom-color: var(--turquoise-sea); }
