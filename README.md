@@ -1,8 +1,8 @@
-# CPRC Regional Data Center — Data Tools (Beta)
+# CPRC Regional Data Hub — Data Tools (Beta)
 
 **Live site: https://data.centralpinesnc.gov**
 
-This is a pilot site for the Central Pines Regional Council Regional Data Center's interactive HTML tools: dashboards, maps, calculators and similar pages. It's a plain static website hosted for free on **GitHub Pages**. Every change pushed to the `main` branch goes live within a minute or two.
+This is a pilot site for the Central Pines Regional Council Regional Data Hub's interactive HTML tools: dashboards, maps, calculators and similar pages. It's a plain static website hosted for free on **GitHub Pages**. Every change pushed to the `main` branch goes live within a minute or two.
 
 Questions: data@centralpinesnc.gov
 
@@ -17,6 +17,7 @@ Questions: data@centralpinesnc.gov
 | `assets/css/style.css` | CPRC brand colors and layout |
 | `assets/js/main.js` | Builds the cards from the catalog (no edits needed) |
 | `tools/<tool-name>/` | One folder per tool, each with its own `index.html` and any data files |
+| `accessibility.html` | Accessibility statement (linked in the footer). Update the "last reviewed" date when you review it. |
 | `404.html` | "Page not found" page |
 | `CNAME` | Connects the site to data.centralpinesnc.gov. **Don't edit or delete it.** |
 | `.nojekyll` | Tells GitHub to serve the files exactly as-is. Don't delete it. |
@@ -62,8 +63,25 @@ To **update** a tool, replace its `index.html`, change the `updated` date in `to
 
 - **Everything here is public:** the website and every file in this repository. Don't add internal, draft or sensitive data.
 - **File limits:** each file must be under 100 MB, and the whole site under 1 GB.
-- **Accessibility:** keep tools usable by keyboard with readable contrast, and give charts and maps short text summaries where possible.
+- **Accessibility is required:** every page must meet **WCAG 2.1 Level AA**, following NC's [Web Content Accessibility guidance](https://it.nc.gov/digital-accessibility/web-content-accessibility). See the checklist below.
 - **Brand:** use the CPRC 2026 colors (Twilight Purple `#49497F`, Turquoise Sea `#64DAE6`, Orange Creamsicle `#F4AF40`, Lime Lizard `#9FD75C`, Vibrant Coral `#FC7559`, Bright Peony `#F876FF`) and include data@centralpinesnc.gov as the contact.
+
+---
+
+## Accessibility checklist (before publishing any tool)
+
+The site's home, 404 and example pages pass an automated WCAG 2.1 AA scan (axe) and the manual checks below. Each new tool must pass them too.
+
+1. **Automated scan:** run the free [WAVE](https://wave.webaim.org/extension/) or [axe DevTools](https://www.deque.com/axe/devtools/) browser extension on the tool, and fix every error.
+2. **Keyboard only:** unplug the mouse. You should be able to Tab to every control, see where you are at all times, operate everything with Enter, Space or the arrow keys, and never get stuck.
+3. **Zoom:** at 200% browser zoom nothing is cut off. At 400% (about a phone's width) the content reflows without sideways scrolling, except for maps and wide data tables.
+4. **Contrast:** text is at least 4.5:1 against its background (3:1 for large text), and buttons, input borders, chart lines and map symbols are at least 3:1. Check with the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/).
+5. **Not color alone:** charts and maps also use labels, patterns or a legend with text, not just color.
+6. **Text alternatives:** images have alt text (decorative images use `alt=""`). Charts and maps have a short text summary of the key takeaway, and a data table or download where practical.
+7. **Structure:** the page has a unique `<title>`, `lang="en"`, one `<h1>` and headings in order. Form fields have visible labels, and data tables have header cells.
+8. **Motion:** nothing flashes. Any animation longer than 5 seconds can be paused.
+
+When in doubt, ask for a review before publishing.
 
 ---
 

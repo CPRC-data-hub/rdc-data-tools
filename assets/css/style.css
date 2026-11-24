@@ -1,4 +1,4 @@
-/* Central Pines Regional Council — Regional Data Center tools site
+/* Central Pines Regional Council — Regional Data Hub tools site
    Colors from the CPRC 2026 Brand Book. Proxima Nova is used if the
    visitor has it; Poppins (loaded from Google Fonts) is the web fallback. */
 
@@ -21,7 +21,7 @@
 * { box-sizing: border-box; }
 
 body {
-  margin: 0;
+  margin: 0; min-height: 100vh; display: flex; flex-direction: column;
   font-family: var(--font);
   color: var(--carbon-black);
   background: var(--bg);
@@ -31,9 +31,13 @@ body {
 .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
 a { color: var(--twilight-purple); }
+/* Focus indicator: purple ring on light areas, orange ring on dark areas (both >= 3:1 contrast) */
 a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible {
-  outline: 3px solid var(--orange-creamsicle);
+  outline: 3px solid var(--twilight-purple);
   outline-offset: 2px;
+}
+.site-header a:focus-visible, .site-footer a:focus-visible, .skip-link:focus-visible {
+  outline-color: var(--orange-creamsicle);
 }
 
 .skip-link {
@@ -68,7 +72,7 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 .nav-list a:hover, .nav-list a[aria-current="page"] { border-bottom-color: var(--turquoise-sea); }
 
 /* Hero */
-.hero { background: linear-gradient(135deg, var(--twilight-purple) 0%, #5c5c99 100%); color: #fff; padding: 56px 0 64px; border-top: 1px solid rgba(255,255,255,0.12); }
+.hero { background: var(--twilight-purple); color: #fff; padding: 56px 0 64px; border-top: 1px solid rgba(255,255,255,0.12); }
 .eyebrow { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; font-weight: 600; color: var(--turquoise-sea); margin: 0 0 8px; }
 .hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin: 0 0 14px; font-weight: 700; }
 .lede { font-size: 1.1rem; max-width: 680px; margin: 0; opacity: 0.95; }
@@ -79,13 +83,13 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 .tools-toolbar h2 { color: var(--twilight-purple); margin: 0; font-size: 1.5rem; }
 .filters { display: flex; gap: 10px; flex-wrap: wrap; }
 .filters input, .filters select {
-  font: inherit; padding: 9px 12px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--carbon-black);
+  font: inherit; padding: 9px 12px; border: 1px solid #767676; border-radius: 8px; background: #fff; color: var(--carbon-black);
 }
 .filters input { min-width: 240px; }
 .result-count { color: var(--cool-gray); font-size: 0.9rem; margin: 14px 0 18px; }
 
 /* Cards */
-.tool-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.tool-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 20px; }
 .tool-card {
   background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
   display: flex; flex-direction: column; overflow: hidden; height: 100%;
@@ -104,6 +108,8 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 .updated { font-size: 0.8rem; color: var(--cool-gray); margin-left: auto; }
 .empty { color: var(--cool-gray); padding: 30px 0; }
 
+main { flex: 1; }
+
 /* Footer */
 .site-footer { background: var(--carbon-black); color: #ddd; padding: 28px 0; font-size: 0.9rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
@@ -116,3 +122,18 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
   .filters { width: 100%; }
   .updated { margin-left: 0; }
 }
+
+/* Respect visitors who turn off animations */
+@media (prefers-reduced-motion: reduce) {
+  .tool-card { transition: none; }
+  .tool-card:hover { transform: none; }
+}
+
+/* Text pages (e.g., accessibility statement) */
+.prose { max-width: 760px; padding-top: 36px; padding-bottom: 64px; }
+.prose h2 { color: var(--twilight-purple); font-size: 1.35rem; margin: 32px 0 10px; }
+.prose h2:first-child { margin-top: 0; }
+.prose p, .prose li { font-size: 1rem; }
+.prose ul { padding-left: 1.3em; }
+.prose li { margin-bottom: 6px; }
+.reviewed { color: var(--cool-gray); font-size: 0.9rem; margin-top: 32px; }

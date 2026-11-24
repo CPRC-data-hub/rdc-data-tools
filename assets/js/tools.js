@@ -28,8 +28,8 @@ window.TOOLS = [
     color: "turquoise"
   },
   {
-    title: "GIS Data Hub",
-    description: "Download regional GIS layers and browse maps and apps on the CPRC ArcGIS Hub site.",
+    title: "GIS Open Data Portal",
+    description: "Download regional GIS layers and browse maps and apps on our ArcGIS open data site.",
     url: "https://cprc-data-hub-tjcoggis.hub.arcgis.com/",
     topics: ["GIS", "Maps"],
     updated: "2026-11-23",
