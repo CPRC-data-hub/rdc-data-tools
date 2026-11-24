@@ -18,6 +18,7 @@ Questions: data@centralpinesnc.gov
 | `assets/js/main.js` | Builds the cards from the catalog (no edits needed) |
 | `tools/<tool-name>/` | One folder per tool, each with its own `index.html` and any data files |
 | `accessibility.html` | Accessibility statement (linked in the footer). Update the "last reviewed" date when you review it. |
+| `favicon.ico`, `assets/img/` | Browser-tab and phone home-screen icons (CPRC pine logo) |
 | `404.html` | "Page not found" page |
 | `CNAME` | Connects the site to data.centralpinesnc.gov. **Don't edit or delete it.** |
 | `.nojekyll` | Tells GitHub to serve the files exactly as-is. Don't delete it. |
@@ -40,7 +41,7 @@ You can also make small edits right on github.com: open a file and click the pen
 1. **Get the latest version first.** In GitHub Desktop, click **Fetch origin**, then **Pull origin** if it appears. This avoids clashing with someone else's changes.
 2. Make a folder in `tools/` named in lowercase-with-dashes, such as `tools/commute-dashboard/`.
 3. Save the tool's HTML file in that folder as `index.html`. Put any data files it uses (CSV, images) in the same folder.
-4. Optional but recommended: add a "← Back to all data tools" link near the top of the tool, pointing to `../../`.
+4. Optional but recommended: add a "← Back to all data tools" link near the top of the tool, pointing to `../../`. To show the CPRC pine in the browser tab, add `<link rel="icon" href="../../favicon.ico">` inside the tool's `<head>`.
 5. Open `assets/js/tools.js`, copy an existing entry, paste it at the top of the list, and fill it in:
    ```js
    {

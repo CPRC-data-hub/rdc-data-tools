@@ -55,10 +55,7 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 .site-header { background: var(--twilight-purple); color: #fff; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
-.brand-mark {
-  width: 38px; height: 38px; border-radius: 50%;
-  background: conic-gradient(var(--turquoise-sea) 0 25%, var(--lime-lizard) 0 50%, var(--orange-creamsicle) 0 75%, var(--vibrant-coral) 0);
-}
+.brand-mark { width: 33px; height: 40px; display: block; flex-shrink: 0; } /* CPRC pine icon, white version */
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-org { font-size: 0.8rem; opacity: 0.85; }
 .brand-site { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; }
@@ -111,7 +108,7 @@ a:focus-visible, input:focus-visible, select:focus-visible, button:focus-visible
 main { flex: 1; }
 
 /* Footer */
-.site-footer { background: var(--carbon-black); color: #ddd; padding: 28px 0; font-size: 0.9rem; }
+.site-footer { background: var(--twilight-purple); color: #fff; padding: 28px 0; font-size: 0.9rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .site-footer p { margin: 0 0 4px; }
 .site-footer a { color: var(--turquoise-sea); }
